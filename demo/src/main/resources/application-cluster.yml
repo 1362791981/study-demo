@@ -1,0 +1,36 @@
+test:
+  str: Hello, SpringBoot With Docker
+spring:
+  redis:
+    cluster:
+      nodes: 49.233.105.77:6380,49.233.105.77:6381,49.233.105.77:6382,49.233.105.77:6383,49.233.105.77:6384,49.233.105.77:6385
+      password: zmx666
+      # 重定向最大数
+      max-redirects: 6
+      # 尝试次数
+      max-attempts: 2
+      # 连接超时时间
+      connection-timeout: 6000
+      # 读取数据超时时间
+      so-timeout: 1000
+    lettuce:
+      pool:
+        max-idle: 16
+        max-active: 32
+        min-idle: 8
+    jedis:
+      pool:
+        max-idle: 6
+        max-active: 32
+        max-wait: 100
+        min-idle: 4
+task:
+  pool:
+    # 核心线程池大小
+    core-pool-size: 10
+    # 最大线程数
+    max-pool-size: 30
+    # 活跃时间
+    keep-alive-seconds: 60
+    # 队列容量
+    queue-capacity: 50
